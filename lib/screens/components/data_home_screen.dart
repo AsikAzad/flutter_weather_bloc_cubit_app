@@ -9,7 +9,7 @@ import '../components/input_field.dart';
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Text(
-          weather.cityName,
+          weather.cityName.toUpperCase(),
           style: const TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.w700,

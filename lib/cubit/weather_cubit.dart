@@ -2,8 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import '../models/weather.dart';
 import '../repository/weather_repo.dart';
-import '../repository/weather_repo_fake_impl.dart';
-
 
 part 'weather_state.dart';
 
@@ -17,7 +15,7 @@ class WeatherCubit extends Cubit<WeatherState> {
       emit(const WeatherLoading());
       final weather = await _weatherRepository.fetchWeather(cityName);
       emit(WeatherLoaded(weather));
-    } on NetworkException {
+    } on Exception {
       emit(const WeatherError("Couldn't fetch weather. Is the device online?"));
     }
   }

@@ -1,10 +1,6 @@
 import 'dart:math';
-
-
 import 'package:flutter_weather_bloc_cubit_app/repository/weather_repo.dart';
-
 import '../models/weather.dart';
-
 
 class FakeWeatherRepository implements WeatherRepository {
   @override
@@ -17,7 +13,7 @@ class FakeWeatherRepository implements WeatherRepository {
 
         // Simulate some network exception
         if (random.nextBool()) {
-          throw NetworkException();
+          throw Exception();
         }
 
         // Return "fetched" weather
@@ -30,5 +26,3 @@ class FakeWeatherRepository implements WeatherRepository {
     );
   }
 }
-
-class NetworkException implements Exception {}
