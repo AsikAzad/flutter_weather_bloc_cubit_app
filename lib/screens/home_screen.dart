@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               }
             },
             builder: (context, state) {
+              print("Asik: " + state.toString());
               if (state is WeatherInitial) {
                 return initialHomeScreen();
               } else if (state is WeatherLoading) {
